@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'generators/color_generator.dart';
 import 'generators/rgb_color_generator.dart';
@@ -18,6 +19,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([]);
     return GestureDetector(
       child: Scaffold(
         backgroundColor: _backgroundColor,
