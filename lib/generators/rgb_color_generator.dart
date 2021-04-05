@@ -5,20 +5,13 @@ import 'package:flutter/material.dart';
 import 'color_generator.dart';
 
 class RgbColorGenerator implements ColorGenerator {
-  int _red;
-  int _green;
-  int _blue;
 
   @override
   Color generateColor() {
-    _setColorComponents();
-    return Color.fromRGBO(_red, _green, _blue, 1);
-  }
-
-  void _setColorComponents() {
-    _red = _randomizeColorComponent();
-    _green = _randomizeColorComponent();
-    _blue = _randomizeColorComponent();
+    final int red = _randomizeColorComponent();
+    final int green = _randomizeColorComponent();
+    final int blue = _randomizeColorComponent();
+    return Color.fromRGBO(red, green, blue, 1);
   }
 
   int _randomizeColorComponent() => math.Random().nextInt(256);
